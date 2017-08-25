@@ -11,21 +11,19 @@ using namespace std;
 int solver_troco(int num,int coins[]){
     int k = 0,
     cont = 0;
-    // int n = sizeof(coins)/sizeof(coins[0]); // Only in C
     int n = 6; // Lentgh of coins
     while (k < n) {
           if (num/coins[k] > 0) {
-              cont += num/coins[k];
+              cont+= num/coins[k];
               num%=coins[k];
-          }else{
-            k++;
           }
+          k++;
     }
     return cont;
 }
 
 main(){
-      // Usual coins in Brazil 
+      // Usual coins in Brazil
       int coins[] = {100,50,25,10,5,1};
       float value;
       std::cout << "Value: ";
